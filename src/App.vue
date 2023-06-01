@@ -1,11 +1,8 @@
 <template>
+  <RouterView name="HeaderView" />
   <RouterView />
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style>
-
-</style>
+<style lang="scss"></style>

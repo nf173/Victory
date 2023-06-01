@@ -43,9 +43,10 @@ export default defineConfig({
   },
 
   css: {
+    // css 预处理器
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "@/assets/styles/main.scss";`
+        // additionalData: '@import "@/assets/style/main.scss";'
       }
     }
   }
