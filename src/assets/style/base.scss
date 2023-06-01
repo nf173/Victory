@@ -1,0 +1,33 @@
+:root {
+  /* 文字颜色 */
+  --color-text: #606266;
+  --color-primary-text: #303133;
+  --color-secondary-text: #909399;
+  --color-placeholder-text: #C0C4CC;
+
+  --color-border: #DCDFE6;
+  --color-secondary-border: #E4E7ED;
+  --color-tertiary-border: #EBEEF5;
+  --color-quaternary-border: #F2F6FC;
+
+  --color-background: #f0f0f0;
+
+  --color-success: #29A439;
+  --color-warning: #F0A020;
+  --color-danger: #D03050;
+  --color-info: #2080F0;
+}
+
+.theme-dark {
+  :root {
+    --color-text: rgba(255, 255, 255, 0.75);
+    --color-primary-text: #ffffff;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: rgba(255, 255, 255, 0.75);
+    --color-primary-text: #ffffff;
+  }
+}
