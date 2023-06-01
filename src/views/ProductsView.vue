@@ -1,6 +1,5 @@
 <template>
   <div id="Products">
-
   </div>
 </template>
 
@@ -9,4 +8,5 @@ import { } from 'vue'
 
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>

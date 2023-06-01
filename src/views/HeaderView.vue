@@ -1,9 +1,11 @@
 <template>
-    <header class="header" :class="{ 'theme-dark': themeStore.isThemeDark && !isCollapsed, 'collapsed': isCollapsed }">
+    <header
+        class="header"
+        :class="{ 'theme-dark': themeStore.isThemeDark && !headerStore.isCollapsed, 'collapsed': headerStore.isCollapsed }">
         <div class="header-container header-meta">
             <div class="content">
                 <p>The World’s Leading Switching Power Supply Manufacturer</p>
-                <a href="#">Company Entrance</a> 
+                <a href="#">Company Entrance</a>
             </div>
         </div>
         <div class="header-container header-tools">
@@ -83,16 +85,17 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useThemeStore } from '@/stores'
+import { useHeaderStore } from '@/stores'
 
 const router = useRouter()
 
-/* 是否折叠 header */
-const isCollapsed = ref(false)
-/* 当前页面是否为黑暗主题 */
+/* 引入状态管理仓库 */
 const themeStore = useThemeStore()
+const headerStore = useHeaderStore()
+
 
 /* 搜索下拉框值 | 搜索下拉菜单选项 */
 const searchSelectValueRef = ref('All')
@@ -188,25 +191,6 @@ const navItemClick = (item) => {
         router.push(item.path)
     }
 }
-
-onMounted(()=>{
-    const offsetY = 300;
-    /* 监听鼠标滚动 header 折叠 */
-    window.addEventListener('scroll', (e)=>{
-        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop   // 获取当前滚动距离
-        let opacity = scrollTop / offsetY    // 根据滚动距离实时计算透明度
-        if(opacity > 1) {   // 边界情况：最大透明度为 1
-            opacity = 1
-        }
-        document.querySelector('.header').style.setProperty('background', `rgba(255, 255, 255, ${opacity})`)
-
-        if(scrollTop > offsetY) {   // 当滚动距离超过设定最大偏移量，触发 header 折叠
-            isCollapsed.value = true
-        } else {
-            isCollapsed.value = false
-        }
-    })
-})
 
 </script>
 
