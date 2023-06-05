@@ -9,6 +9,7 @@
 .container {
   min-height: 200vh;
   position: relative;
+
   &::after {
     content: '';
     position: absolute;
@@ -18,6 +19,7 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.4);
   }
+
   .bg {
     width: 100%;
     height: 100vh;

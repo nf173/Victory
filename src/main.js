@@ -4,8 +4,12 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
+import svgIcon from './components/SvgIcon/SvgIcon.vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+
 import 'virtual:svg-icons-register'
 import './assets/style/main.scss'
+import 'swiper/scss'
 
 /* 创建 App */
 const app = createApp(App)
@@ -14,9 +18,10 @@ const app = createApp(App)
 import directivesInstall from './directives'
 directivesInstall(app)
 
-/* 全局注册 SvgIcon 组件 */
-import svgIcon from './components/SvgIcon/SvgIcon.vue'
+/* 全局组件注册 */
 app.component('svg-icon', svgIcon)
+app.component('Swiper', Swiper)
+app.component('SwiperSlide', SwiperSlide)
 
 app.use(createPinia())
 app.use(router)

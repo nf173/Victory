@@ -36,3 +36,16 @@ li {
   margin: 0 auto;
   font-weight: normal;
 }
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.ellipsis-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

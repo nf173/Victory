@@ -1,9 +1,7 @@
 <template>
-  <RouterView name="HeaderView" />
-  <n-scrollbar 
-    style="max-height: 100vh"
-    @scroll="handleScroll">
-      <RouterView></RouterView>
+  <n-scrollbar style="max-height: 100vh" @scroll="handleScroll">
+    <RouterView name="HeaderView" />
+    <RouterView></RouterView>
   </n-scrollbar>
 </template>
 
